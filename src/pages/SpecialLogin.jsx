@@ -16,9 +16,6 @@ export default function SpecialLogin() {
     "bg-[#006ECF] text-white": disabledChecker(),
     "bg-gray-200 text-gray-500": !disabledChecker(),
   });
-  const onSubmit = () => {
-    navigate("/account/profile")
-  }
   return (
     <div className="w-[90%] mt-10 mx-auto flex flex-col items-center">
       <LogoApp />
@@ -27,7 +24,7 @@ export default function SpecialLogin() {
         ورود کاربر خاص (-:
       </div>
       <UserRole />
-      <form onSubmit={onSubmit} className="w-full h-max">
+      <form className="w-full h-max">
         <Input
           type={"text"}
           placeholder={"کدملی"}
@@ -55,7 +52,7 @@ export default function SpecialLogin() {
         <div className="w-full h-10 flex flex-row justify-between items-center">
           <span>تماس با پشتیبانی</span>
           <button
-            type="button"
+            type="button" onClick={() => navigate("/account/profile")}
             className="w-[84px] h-full bg-gray-200 rounded-[10px]"
           >
             تماس
