@@ -7,19 +7,15 @@ import TestHeader from "../components/generalComponent/HeaderTest";
 import ParaClinicDr from "../components/paraClinic/ParaClinicDr";
 import ParaClinicPC from "../components/paraClinic/ParaClinicPC";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function ParaClinic() {
   const navigate = useNavigate();
-
   const [selectItem, setSelectItem] = useState("پزشک");
   const getSelectedItem = (item) => {
     setSelectItem(item);
   };
-
-  const [status, setStatus] = useState({
-    clinic: "incomplete",
-    doctor: "complete",
-  });
+  const items = useSelector(state => state.actions.paraClinic);
 
   return (
     <>
@@ -44,13 +40,13 @@ export default function ParaClinic() {
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.doctor}
+            status={items.doctor}
             title={"پزشک"}
           />
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.clinic}
+            status={items.paraClinic}
             title={"پاراکلنیک"}
           />
         </div>

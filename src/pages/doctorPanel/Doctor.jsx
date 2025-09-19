@@ -18,7 +18,7 @@ export default function Doctor() {
       <div className="w-full h-10 flex flex-row gap-5 vazir-medium px-5 border-b border-b-gray-200">
         <div
           onClick={() => setActive({ record: false, consulting: true })}
-          className={`w-[95px] h-[40.2px] flex items-center justify-center text-[15px] ${changeActiveElem(
+          className={`w-[95px] hover:cursor-pointer h-[40.2px] flex items-center justify-center text-[15px] ${changeActiveElem(
             active.consulting
           )}`}
         >
@@ -26,7 +26,7 @@ export default function Doctor() {
         </div>
         <div
           onClick={() => setActive({ record: true, consulting: false })}
-          className={`w-[95px] h-[40.2px] flex items-center justify-center text-[15px] ${changeActiveElem(
+          className={`w-[95px] hover:cursor-pointer h-[40.2px] flex items-center justify-center text-[15px] ${changeActiveElem(
             active.record
           )}`}
         >

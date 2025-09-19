@@ -14,7 +14,7 @@ export default function Navbar() {
         })
     }
     return (
-        <div className="fixed mx-auto bottom-0 left-0 flex items-center text-[14px] justify-between px-6 bg-white border border-top border-gray-300 w-[100%] h-16 shadow-md z-100">
+        <div className="fixed mx-auto bottom-0 left-0 right-0 flex items-center text-[14px] justify-between px-6 bg-white border border-top border-gray-300 w-[402px] h-16 z-100">
             <NavLink to={"/account/service-desk"} className={({isActive}) => activeClass(isActive)}>
                 <FiHome size={22} />
                 <div>میز خدمت</div>

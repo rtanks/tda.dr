@@ -9,18 +9,14 @@ import TestDr from "../components/test/TestDr";
 import TestInterPretation from "../components/test/TestInterpretation";
 import TestSample from "../components/test/TestSample";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function TestRequest() {
   const [selectItem, setSelectItem] = useState("پزشک");
   const getSelectedItem = (item) => {
     setSelectItem(item);
   };
-  const [status, setStatus] = useState({
-    sample: "incomplete",
-    doctor: "complete",
-    interPretation: "incomplete",
-    laboratory: "incomplete",
-  });
+  const items = useSelector(state => state.actions.test)
 
   const showItemSelected = () => {
     switch (selectItem) {
@@ -59,25 +55,25 @@ export default function TestRequest() {
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.doctor}
+            status={items.doctor}
             title={"پزشک"}
           />
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.laboratory}
+            status={items.laboratory}
             title={"آزمایشگاه"}
           />
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.sample}
+            status={items.sample}
             title={"نمونه گیر"}
           />
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.interPretation}
+            status={items.interPretation}
             title={"تفسیر"}
           />
         </div>

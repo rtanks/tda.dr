@@ -3,9 +3,9 @@ import Navbar from "../../components/doctorPanel/Navbar";
 
 export default function Account() {
   return (
-    <>
+    <div className="w-full">
       <Outlet />
       <Navbar />
-    </>
+    </div>
   );
 }

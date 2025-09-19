@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { LuCircle, LuCircleCheckBig } from "react-icons/lu";
 
-export default function SelectedItem({select, done, title, text}) {
+export default function SelectedItem({select, done, title, text, changeCompleteStatus}) {
     const [selected, setSelected] = useState(select);
-    const [itemDone, setItemDone] = useState(done);
+    const [itemDone, setItemDone] = useState(false);
 
     return(
         <div className="w-full h-max vazir-medium flex flex-row justify-between items-center">
@@ -16,7 +16,7 @@ export default function SelectedItem({select, done, title, text}) {
             </div>
             {
                 selected ? (
-                    <div onClick={() => setItemDone(prev => !prev)} className={`w-[84px] h-[40px] flex justify-center items-center text-[16px] rounded-[10px] ${itemDone ? "bg-[#CDF2D3] text-[#00C313]" : "bg-[#D9D9D9] text-[#676767]"}`}>
+                    <div onClick={() => {setItemDone(prev => !prev); changeCompleteStatus();}} className={`w-[84px] h-[40px] flex justify-center items-center text-[16px] rounded-[10px] ${itemDone ? "bg-[#CDF2D3] text-[#00C313]" : "bg-[#D9D9D9] text-[#676767]"}`}>
                         انجام شد
                     </div> ) : ""
             }

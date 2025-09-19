@@ -9,30 +9,25 @@ import Drugstore from "../components/medicine/Drugstore";
 import Courier from "../components/medicine/Courier";
 import MedicineInterPretation from "../components/medicine/MedicineInterpretation";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Medicine() {
   const [selectItem, setSelectItem] = useState("پزشک");
   const getSelectedItem = (item) => {
     setSelectItem(item);
   };
-
-  const [status, setStatus] = useState({
-    courier: "incomplete",
-    doctor: "complete",
-    interPretation: "incomplete",
-    drugstore: "incomplete",
-  });
+ const items = useSelector(state => state.actions.medicine);
 
   const showItemSelected = () => {
     switch (selectItem) {
       case "پزشک":
-        return <MedicineDr />;
+        return <MedicineDr/>;
       case "داروخانه":
-        return <Drugstore />;
+        return <Drugstore/>;
       case "پیک":
-        return <Courier />;
+        return <Courier/>;
       case "تفسیر":
-        return <MedicineInterPretation />;
+        return <MedicineInterPretation/>;
     }
   };
 
@@ -62,31 +57,31 @@ export default function Medicine() {
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.doctor}
+            status={items.doctor}
             title={"پزشک"}
           />
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.drugstore}
+            status={items.drugstore}
             title={"داروخانه"}
           />
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.courier}
+            status={items.courier}
             title={"پیک"}
           />
           <SelectItem
             onClick={getSelectedItem}
             selectItem={selectItem}
-            status={status.interPretation}
+            status={items.interpretation}
             title={"تفسیر"}
           />
         </div>
         <SearchBoxFull />
         <div className="w-full h-max flex flex-col gap-5 mb-6">
-          {showItemSelected()}
+            {showItemSelected()}
         </div>
       </div>
     </>

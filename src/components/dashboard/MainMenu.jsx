@@ -3,6 +3,7 @@ import classNames from "classnames"
 import { HiOutlineCurrencyDollar, HiOutlinePencilSquare } from "react-icons/hi2";
 import { IoEyeOutline, IoRocketOutline } from "react-icons/io5";
 import { LiaAngleRightSolid } from "react-icons/lia";
+import { BiComment } from "react-icons/bi";
 
 export default function MainMenu({toggle, changeToggleStatus}) {
     
@@ -42,7 +43,10 @@ export default function MainMenu({toggle, changeToggleStatus}) {
                     <HiOutlineCurrencyDollar size={24} className={iconClassName}/>
                     <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>قیمت گزاری</span>
                 </NavLink>
-            
+                <NavLink to={"/dashboard/comments"} className={({isActive}) => activeItem(isActive)}>
+                    <BiComment size={24} className={iconClassName}/>
+                    <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>نظر کاربران</span>
+                </NavLink>
         </div>
     )
 }

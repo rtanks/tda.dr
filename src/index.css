@@ -15,3 +15,6 @@
 .vazir-medium{
     font-family: IranSansBold;
 }
+#root {
+    @apply w-[402px] mx-auto;
+}
