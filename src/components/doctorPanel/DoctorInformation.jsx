@@ -1,6 +1,7 @@
 import RadarCircle from "../generalComponent/Radar";
 import DoctorOne from "../../assets/images/پزشک زن.jpg";
 import { BiStar } from "react-icons/bi";
+import {transformFormat,transformFormatWithSpread} from '../../services/func/transformFunc'
 
 export default function DoctorInformation() {
     return (
@@ -15,17 +16,17 @@ export default function DoctorInformation() {
                 <div className="w-[236px] h-max mt-1 flex flex-row gap-[10px]">
                     <div className="w-[71px] flex flex-col gap-[6px] items-center justify-center">
                         <div className="w-full h-7 flex flex-row justify-center items-center text-[#FF9E33] text-sm bg-[#FF9E333f] rounded-[5px]">
-                            ۴.۸
+                            {transformFormat(4.8)}
                             <BiStar size={14}/> 
                         </div>
-                        <span className="text-xs text-[#676767]">از ۷.۱۲۰ امتیاز</span>
+                        <span className="text-xs text-[#676767]">از {transformFormatWithSpread(7120)} امتیاز</span>
                     </div>
                     <div className="w-[71px] flex flex-col gap-[6px] items-center justify-center">
-                        <div className="w-full h-7 flex flex-row justify-center items-center text-[#006ECF] text-sm bg-[#006ECF3f] rounded-[5px]"> ۱۱.۰۰۰+</div>
-                        <span className="text-xs text-[#676767]">از ۷.۱۲۰ امتیاز</span>
+                        <div className="w-full h-7 flex flex-row justify-center items-center text-[#006ECF] text-sm bg-[#006ECF3f] rounded-[5px]"> {transformFormatWithSpread(11000)}+</div>
+                        <span className="text-xs text-[#676767]">از {transformFormatWithSpread(7120)} امتیاز</span>
                     </div>
                     <div className="w-[71px] flex flex-col gap-[6px] items-center justify-center">
-                        <div className="w-full h-7 flex flex-row justify-center items-center text-sm text-[#676767] bg-[#F2F2F2] rounded-[5px]">۱۸۵۴۶۵۴</div>
+                        <div className="w-full h-7 flex flex-row justify-center items-center text-sm text-[#676767] bg-[#F2F2F2] rounded-[5px]">{transformFormat(1854654)}</div>
                         <span className="text-xs text-[#676767]">نظام پزشکی</span>
                     </div>
                 </div>
