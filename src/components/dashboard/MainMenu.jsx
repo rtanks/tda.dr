@@ -1,15 +1,14 @@
-import { NavLink } from "react-router-dom"
 import classNames from "classnames"
 import { HiOutlineCurrencyDollar, HiOutlinePencilSquare } from "react-icons/hi2";
 import { IoEyeOutline, IoRocketOutline } from "react-icons/io5";
 import { LiaAngleRightSolid } from "react-icons/lia";
 import { BiComment } from "react-icons/bi";
 
-export default function MainMenu({toggle, changeToggleStatus}) {
+export default function MainMenu({active, toggle, changeToggleStatus, changeActiveElem}) {
     
     const activeItem = (status) => {
         let activeClass = classNames({
-            "flex flex-row gap-[10px] items-center py-2 px-3 rounded-2xl text-[#676767]": true,
+            "flex flex-row gap-[10px] border-black items-center py-2 px-3 rounded-2xl text-[#676767]": true,
             "bg-blue-50": status,
             "bg-white": !status,
             "md:px-2": toggle
@@ -27,26 +26,26 @@ export default function MainMenu({toggle, changeToggleStatus}) {
                 <LiaAngleRightSolid size={24}/>
             </div>
             <h1 className={`line-clamp-1 text-center text-2xl py-3 text-[#909090] font-bold`}>TDA۲۴.IR</h1>
-                <NavLink to={"/dashboard/need-for-action"} className={({isActive}) => activeItem(isActive)}>
+                <button onClick={() => changeActiveElem({comments: false, needAction: true}, "needAction")} className={activeItem(active.needAction)}>
                     <IoRocketOutline size={24} className={iconClassName}/>
                     <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>نیاز به اقدام</span>
-                </NavLink>
-                <NavLink to={"/dashboard/payment"} className={({isActive}) => activeItem(isActive)}>
+                </button>
+                <button className={activeItem(false)}>
                     <IoEyeOutline size={24} className={iconClassName}/>
                     <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>نیاز به پرداخت</span>
-                </NavLink>
-                <NavLink to={"/dashboard/record-doctor"} className={({isActive}) => activeItem(isActive)}>
+                </button>
+                <button className={activeItem(false)}>
                     <HiOutlinePencilSquare size={24} className={iconClassName}/>
                     <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>ثبت پزشک</span>
-                </NavLink>
-                <NavLink to={"/dashboard/currency"} className={({isActive}) => activeItem(isActive)}>
+                </button>
+                <button className={activeItem(false)}>
                     <HiOutlineCurrencyDollar size={24} className={iconClassName}/>
                     <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>قیمت گزاری</span>
-                </NavLink>
-                <NavLink to={"/dashboard/comments"} className={({isActive}) => activeItem(isActive)}>
+                </button>
+                <button onClick={() => changeActiveElem({comments: true, needAction: false}, "comments")} className={activeItem(active.comments)}>
                     <BiComment size={24} className={iconClassName}/>
                     <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>نظر کاربران</span>
-                </NavLink>
+                </button>
         </div>
     )
 }
