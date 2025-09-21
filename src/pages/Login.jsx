@@ -37,7 +37,7 @@ export default function Login() {
           onChange={(e) => checkEmptyPassword(e)}
         />
         <SubmitButton
-          title={"ورود"} onClick={() => navigate("/account")}
+          title={"ورود"} onClick={() => navigate("/account/profile")}
           additionalStyle={`${disabledClass} mt-6`}
           disabled={disabledChecker()}
         />

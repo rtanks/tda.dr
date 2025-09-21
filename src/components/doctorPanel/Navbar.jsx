@@ -3,7 +3,7 @@ import { FiHome, FiUser } from "react-icons/fi";
 import { LuClipboard } from "react-icons/lu";
 import { NavLink, useNavigate } from "react-router-dom";
 
-export default function Navbar({active, changeActiveElem}) {
+export default function Navbar() {
     const navigate = useNavigate();
     
     const activeClass = (activeStatus) => {
@@ -15,18 +15,18 @@ export default function Navbar({active, changeActiveElem}) {
     }
     return (
         <div className="fixed mx-auto bottom-0 left-0 right-0 flex items-center text-[14px] justify-between px-6 bg-white border border-top border-gray-300 w-[402px] h-16 z-100">
-            <button onClick={() => changeActiveElem({serviceDesk: true, needAction: false, profile: false}, "serviceDesk")} className={activeClass(active.serviceDesk)}>
+            <NavLink to={"/account/service-desk"} className={({isActive}) => activeClass(isActive)}>
                 <FiHome size={22} />
                 <div>میز خدمت</div>
-            </button>
-            <button onClick={() => changeActiveElem({serviceDesk: false, needAction: true, profile: false}, "needAction")} className={activeClass(active.needAction)}>
+            </NavLink>
+            <NavLink to={"/account/need-for-action"} className={({isActive}) => activeClass(isActive)}>
                 <LuClipboard size={22} />
                 <div>نیاز به اقدام</div>
-            </button>
-            <button onClick={() => changeActiveElem({serviceDesk: false, needAction: false, profile: true}, "profile")} className={activeClass(active.profile)}>
+            </NavLink>
+            <NavLink to={"/account/profile"} className={({isActive}) => activeClass(isActive)}>
                <FiUser onClick={()=>navigate('/dashboard/profile-doctor')} size={22} />
                 <div>پروفایل کاربری</div>
-            </button>
+            </NavLink>
         </div>
     )
 }

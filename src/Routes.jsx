@@ -28,8 +28,15 @@ export default function Router() {
           <Route index element={<Login />} />
           <Route path="retrieve-password" element={<RetrievePassword />} />
         </Route>
-        <Route path="/account" element={<Account />}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route element={<Account />}>
+          <Route path="/account/profile" element={<ProfileDr />} />
+          <Route path="/account/need-for-action" element={<NeedForActionDr />}/>
+          <Route path="/account/service-desk" element={<Doctor />} />
+        </Route>
+        <Route element={<Dashboard />}>
+          <Route path="/dashboard/need-for-action" element={<NeedForAction />}/>
+          <Route path="/dashboard/comments" element={<Comments/>}/>
+        </Route>
         <Route path="/paraclinic" element={<ParaClinic />} />
         <Route path="/test-request" element={<TestRequest />} />
         <Route path="/medicine" element={<Medicine />} />
