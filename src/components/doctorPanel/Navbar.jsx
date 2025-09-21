@@ -1,10 +1,12 @@
 import classNames from "classnames";
 import { FiHome, FiUser } from "react-icons/fi";
 import { LuClipboard } from "react-icons/lu";
+import { useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
     const navigate = useNavigate();
+    const showNavbar = useSelector(state => state.selectAction.showNavbar);
     
     const activeClass = (activeStatus) => {
         return classNames({
@@ -14,7 +16,7 @@ export default function Navbar() {
         })
     }
     return (
-        <div className="fixed mx-auto bottom-0 left-0 right-0 flex items-center text-[14px] justify-between px-6 bg-white border border-top border-gray-300 w-[402px] h-16 z-100">
+        <div className={`fixed mx-auto bottom-0 left-0 right-0 ${showNavbar? "flex" : "hidden"} items-center text-[14px] justify-between px-6 bg-white border border-top border-gray-300 w-[402px] h-16 z-100`}>
             <NavLink to={"/account/service-desk"} className={({isActive}) => activeClass(isActive)}>
                 <FiHome size={22} />
                 <div>میز خدمت</div>

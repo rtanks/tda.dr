@@ -1,13 +1,11 @@
-import { useNavigate } from "react-router-dom";
 import TestHeader from "../../components/generalComponent/HeaderTest";
 import PatientInfo from "../../components/PatientInfo";
 
-export default function EmergencyCall() {
-    const navigate = useNavigate();
+export default function EmergencyCall({goBack}) {
     
     return (
         <div className="w-full h-max vazir-medium">
-            <TestHeader title={"مشاوره تلفنی اورژانسی"} onClick={() => navigate("/account/need-for-action")}/>
+            <TestHeader title={"مشاوره تلفنی اورژانسی"} onClick={() => goBack()}/>
             <div className="w-full h-full px-5 pb-2 vazir-medium">
                 <PatientInfo name={"اشکان حسنوندی"} phoneNumber={"09216919291"} time={"14:45"} date={"1404/12/01"} nationalCode={"4060405531"} insurance={"آزاد"}/>
                 <p className="w-full text-[#676767] text-[14px] p-1">توضیحات : نمونه گیر ما در محل لوکیشن شما حضور پیدا کرده و بعد از دریافت نمونه به سرعت به آزمایشگاه منتقل و جوابدهی خواهد شد و نتیجه در پرونده پزشکی اشکان حسنوندی درج میگردد .</p>

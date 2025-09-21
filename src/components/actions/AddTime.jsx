@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-export default function AddTime({title, times}) {
+export default function AddTime({title, times, goTo}) {
     const navigate = useNavigate();
     
     return (
@@ -12,7 +12,7 @@ export default function AddTime({title, times}) {
             <div className="w-full flex flex-row gap-2 px-3">
                 {
                     times.map(time => (
-                        <button key={time.id} type="button" onClick={() => navigate("/account/need-for-action/in-person-consultation/in-person-request")} disabled={!time.active} 
+                        <button key={time.id} type="button" onClick={() => goTo()} disabled={!time.active} 
                             className={`py-2 px-3 rounded-[10px] ${time.active ? "text-[#00A51E] bg-[#CDF2D3]" : "text-[#676767] bg-[#e9e9e9]"} `}>
                             {time.start} تا {time.end}
                         </button>

@@ -1,14 +1,12 @@
-import { useNavigate } from "react-router-dom";
 import TestHeader from "../../components/generalComponent/HeaderTest";
 import PatientInfo from "../../components/PatientInfo";
 import RequestAndExplain from "../../components/RequestAndExplain";
 
-export default function RecordTestRequest() {
-    const navigate = useNavigate();
+export default function RecordTestRequest({goBack}) {
 
     return (
         <div className="w-full h-max vazir-medium">
-            <TestHeader title={"ثبت آزمایش"} onClick={() => navigate("/account/need-for-action")}/>
+            <TestHeader title={"ثبت آزمایش"} onClick={() => goBack()}/>
             <div className="w-[90%] mx-auto flex flex-col gap-2 pb-2">
                 <PatientInfo name={"اشکان حسنوندی"} phoneNumber={"09216919291"} time={"14:45"} date={"1404/12/01"} nationalCode={"4060405531"} insurance={"آزاد"}/>
                 <p className="w-full text-[#676767] text-[14px] p-1">توضیحات : نمونه گیر ما در محل لوکیشن شما حضور پیدا کرده و بعد از دریافت نمونه به سرعت به آزمایشگاه منتقل و جوابدهی خواهد شد و نتیجه در پرونده پزشکی اشکان حسنوندی درج میگردد .</p>

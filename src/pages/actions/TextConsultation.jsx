@@ -1,11 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import TestHeader from "../../components/generalComponent/HeaderTest";
 import PatientInfo from "../../components/PatientInfo"
 import { LuArrowUp } from "react-icons/lu";
 import { useState } from "react";
 import {transformFormat} from "../../services/func/transformFunc"
-export default function TextConsultation() {
-    const navigate = useNavigate();
+
+export default function TextConsultation({goBack}) {
     const [textType, setTextType] = useState("");
 
     const [text,setText] = useState([
@@ -25,8 +24,8 @@ export default function TextConsultation() {
         return transformFormat(`${dateNow.getHours()}:${dateNow.getMinutes()}`)
     } 
     return (
-        <div className="w-full h-full vazir-medium">
-            <TestHeader title={"مشاوره متنی"} onClick={() => navigate("/account/need-for-action")}/>
+        <div className="w-full overflow-y-scroll vazir-medium">
+            <TestHeader title={"مشاوره متنی"} onClick={() => goBack()}/>
             <div className="w-[90%] mx-auto pb-2">
                 <PatientInfo name={"اشکان حسنوندی"} phoneNumber={"09216919291"} time={"14:45"} date={"1404/12/01"} nationalCode={"4060405531"} insurance={"آزاد"}/>
                 <p className="w-full text-[#676767] text-[14px] p-1">توضیحات : نمونه گیر ما در محل لوکیشن شما حضور پیدا کرده و بعد از دریافت نمونه به سرعت به آزمایشگاه منتقل و جوابدهی خواهد شد و نتیجه در پرونده پزشکی اشکان حسنوندی درج میگردد .</p>
