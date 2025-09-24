@@ -23,7 +23,7 @@ export default function Wallet({onClick}) {
         <div className="w-full h-full bg-white vazir-medium fixed left-0 top-0 z-50 overflow-y-scroll">
             <div className="w-[402px] mx-auto">
                 <TestHeader title={"کیف پول"} onClick={onClick}/>
-                <div className="w-[90%] h-max mx-auto flex flex-col gap-5 mb-5">
+                <div className="w-[90%] relative h-max mx-auto flex flex-col gap-5 mb-5">
                     <div className="w-full flex flex0row justify-between items-center">
                         <span>اعتبارشما</span>
                         <span>{transformFormatWithSpread(5000)} تومان</span>

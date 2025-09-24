@@ -4,8 +4,8 @@ import {FaCircleCheck} from "react-icons/fa6"
 
 export default function ModalWithdraw({showModal ,onClick}) {
     return (
-        <div className={`w-full h-full absolute left-0 top-0 bg-[#0006] ${showModal ? "flex" : "hidden"} justify-center`}>
-            <div className="w-[90%] h-[500px] rounded-3xl mt-[22%] bg-white">
+        <div className={`w-[402px] h-full absolute -left-5 -top-5 bg-[#0006] ${showModal ? "flex" : "hidden"} justify-center`}>
+            <div className="w-[370px] h-[500px] rounded-3xl mt-10 bg-white">
                 <div className="w-full border-b-2 border-b-[#e9e9e9] flex flex-row text-[#676767] p-5 items-center justify-between">
                     <div className="w-max flex flex-row gap-1">
                         <LuCreditCard size={24}/>
