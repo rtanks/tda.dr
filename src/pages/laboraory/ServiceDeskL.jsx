@@ -14,7 +14,7 @@ export default function ServiceDeskL() {
   };
   
   return (
-    <div className="w-[90%] md:w-[95%] p-0 md:p-5 md:mt-10 vazir-medium rounded-lg mx-auto flex flex-col gap-7 items-center bg-white">
+    <div className="w-[90%] md:w-[95%] p-0 md:p-5 mt-10 vazir-medium rounded-lg mx-auto flex flex-col gap-7 items-center bg-white">
       <DoctorInformation />
       <div className="w-full h-10 flex flex-row gap-5 px-5 border-b border-b-gray-200">
         <div onClick={() => setActive({ package: false, laboratory: true })}
