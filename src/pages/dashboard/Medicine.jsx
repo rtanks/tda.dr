@@ -8,10 +8,9 @@ import MedicineDr from "../../components/medicine/MedicineDr";
 import Drugstore from "../../components/medicine/Drugstore";
 import Courier from "../../components/medicine/Courier";
 import MedicineInterPretation from "../../components/medicine/MedicineInterpretation";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function Medicine() {
+export default function Medicine({onClick}) {
   const [selectItem, setSelectItem] = useState("پزشک");
   const getSelectedItem = (item) => {
     setSelectItem(item);
@@ -31,63 +30,63 @@ export default function Medicine() {
     }
   };
 
-  const navigate = useNavigate();
-
   return (
-    <>
-      <TestHeader
-        title={"دارو"}
-        onClick={() => navigate("/dashboard/need-for-action")}
-      />
-      <div className="w-[90%] mt-10 mx-auto flex flex-col gap-5 items-center">
-        <PatientInfo
-          name={"اشکان حسنوندی"}
-          phoneNumber={"09216919291"}
-          time={"14:45"}
-          date={"1404/12/01"}
-          nationalCode={"4060405531"}
-          insurance={"آزاد"}
+    <div className="w-full h-full bg-white vazir-medium fixed left-0 top-0 z-50 overflow-y-scroll">
+      <div className="w-[402px] mx-auto">
+        <TestHeader
+          title={"دارو"}
+          onClick={onClick}
         />
-        <RequestAndExplain
-          typeRequest={"آزمایش"}
-          titleRequest={"شربت مترونیدازول 500 میلی گرم - آمپول جنتامایشین 300"}
-        />
+        <div className="w-[90%] mt-10 mx-auto flex flex-col gap-5 items-center">
+          <PatientInfo
+            name={"اشکان حسنوندی"}
+            phoneNumber={"09216919291"}
+            time={"14:45"}
+            date={"1404/12/01"}
+            nationalCode={"4060405531"}
+            insurance={"آزاد"}
+          />
+          <RequestAndExplain
+            typeRequest={"آزمایش"}
+            titleRequest={"شربت مترونیدازول 500 میلی گرم - آمپول جنتامایشین 300"}
+          />
 
-        <div className="w-full flex flex-row gap-[10px]">
-          <SelectItem
-            onClick={getSelectedItem}
-            selectItem={selectItem}
-            status={items.doctor.status}
-            doneStatus={items.doctor.doneStatus}
-            title={"پزشک"}
-          />
-          <SelectItem
-            onClick={getSelectedItem}
-            selectItem={selectItem}
-            status={items.drugstore.status}
-            doneStatus={items.drugstore.doneStatus}
-            title={"داروخانه"}
-          />
-          <SelectItem
-            onClick={getSelectedItem}
-            selectItem={selectItem}
-            status={items.courier.status}
-            doneStatus={items.courier.doneStatus}
-            title={"پیک"}
-          />
-          <SelectItem
-            onClick={getSelectedItem}
-            selectItem={selectItem}
-            status={items.interpretation.status}
-            doneStatus={items.interpretation.doneStatus}
-            title={"تفسیر"}
-          />
-        </div>
-        <SearchBoxFull />
-        <div className="w-full h-max flex flex-col gap-5 mb-6">
-            {showItemSelected()}
+          <div className="w-full flex flex-row gap-[10px]">
+            <SelectItem
+              onClick={getSelectedItem}
+              selectItem={selectItem}
+              status={items.doctor.status}
+              doneStatus={items.doctor.doneStatus}
+              title={"پزشک"}
+            />
+            <SelectItem
+              onClick={getSelectedItem}
+              selectItem={selectItem}
+              status={items.drugstore.status}
+              doneStatus={items.drugstore.doneStatus}
+              title={"داروخانه"}
+            />
+            <SelectItem
+              onClick={getSelectedItem}
+              selectItem={selectItem}
+              status={items.courier.status}
+              doneStatus={items.courier.doneStatus}
+              title={"پیک"}
+            />
+            <SelectItem
+              onClick={getSelectedItem}
+              selectItem={selectItem}
+              status={items.interpretation.status}
+              doneStatus={items.interpretation.doneStatus}
+              title={"تفسیر"}
+            />
+          </div>
+          <SearchBoxFull />
+          <div className="w-full h-max flex flex-col gap-5 mb-6">
+              {showItemSelected()}
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

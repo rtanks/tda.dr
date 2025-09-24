@@ -6,7 +6,7 @@ import { LuUserCheck } from "react-icons/lu";
 import { BsTruck } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
-export default function UserItem({name, number, time, date,style}) {
+export default function UserItem({name, number, time, date,style, getItemSelected}) {
     const navigate = useNavigate();
     return (
         <div className="w-full h-max md:h-[70px] vazir-medium text-[14px] p-[15px] flex flex-col md:flex-row items-center gap-2 bg-white rounded-[20px]">
@@ -21,23 +21,23 @@ export default function UserItem({name, number, time, date,style}) {
                 </div>
             </div>
             <div className={`w-full md:w-[60%] flex flex-row items-center flex-wrap pb-4 md:pb-0 gap-2 text-[#676767] ${style}`}>
-                <UserItemBtn onClick={() => navigate("/teriage")}>
+                <UserItemBtn onClick={() => getItemSelected("triage")}>
                     تریاژ
                     <IoEyeOutline size={15}/>
                 </UserItemBtn>
-                <UserItemBtn onClick={() => navigate("/medicine")}>
+                <UserItemBtn onClick={() => getItemSelected("medicine")}>
                     دارو
                     <HiOutlinePencilSquare size={15}/>
                     <FiShoppingBag size={15}/>
                 </UserItemBtn>
-                <UserItemBtn onClick={() => navigate("/test-request")}>
+                <UserItemBtn onClick={() => getItemSelected("test")}>
                     آزمایش
                     <HiOutlinePencilSquare size={15}/>
                     <LuUserCheck size={15}/>
                     <FiShoppingBag size={15}/>
                     <FiFileText size={15}/>
                 </UserItemBtn>
-                <UserItemBtn onClick={() => navigate("/paraclinic")}>
+                <UserItemBtn onClick={() => getItemSelected("paraClinic")}>
                     پاراکلینیک
                     <HiOutlinePencilSquare size={15}/>
                     <FiShoppingBag size={15}/>

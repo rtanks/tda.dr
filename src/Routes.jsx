@@ -1,10 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import RetrievePassword from "./pages/RetrievePassword";
-import ParaClinic from "./pages/dashboard/ParaClinic";
-import TestRequest from "./pages/dashboard/TestRequest";
-import Medicine from "./pages/dashboard/Medicine";
-import Teriage from "./pages/Teriage";
 import ProfileDr from "./pages/doctorPanel/ProfileDr";
 import NeedForActionDr from "./pages/doctorPanel/NeedForActionDr";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -34,15 +30,13 @@ export default function Router() {
           <Route path="/dashboard/need-for-action" element={<NeedForAction />}/>
           <Route path="/dashboard/comments" element={<Comments/>}/>
         </Route>
-        <Route path="/paraclinic" element={<ParaClinic />} />
-        <Route path="/test-request" element={<TestRequest />} />
-        <Route path="/medicine" element={<Medicine />} />
-        <Route path="/teriage" element={<Teriage />} />
         <Route element={<Laboratory/>}>
           <Route path="/laboratory/need-for-action" element={<NeedForActionL/>}/>
           <Route path="/laboratory/profile" element={<ProfileL/>}/>
           <Route path="/laboratory/service-desk" element={<ServiceDeskL/>}/>
         </Route>
+        
+
       </Routes>
     </BrowserRouter>
   );
