@@ -6,19 +6,16 @@ import TestRequest from "./pages/dashboard/TestRequest";
 import Medicine from "./pages/dashboard/Medicine";
 import Teriage from "./pages/Teriage";
 import ProfileDr from "./pages/doctorPanel/ProfileDr";
-import Account from "./pages/doctorPanel/Account";
-import Doctor from "./pages/doctorPanel/Doctor";
 import NeedForActionDr from "./pages/doctorPanel/NeedForActionDr";
 import Dashboard from "./pages/dashboard/Dashboard";
 import NeedForAction from "./pages/dashboard/NeedForAction";
-import Comments from "./pages/dashboard/Comments"
-import InPersonConsultation from "./pages/actions/InPersonConsultation";
-import InPersonRequest from "./pages/actions/InPersonRequest";
-import EmergencyCall from "./pages/actions/EmergencyCall";
-import RecordTestRequest from "./pages/actions/RecordTestRequest";
-import RecordMedicineRequest from "./pages/actions/RecordMedicineRequest";
-import RecordParaClinic from "./pages/actions/RecordParaClinic";
-import TextConsultation from "./pages/actions/TextConsultation";
+import Comments from "./pages/dashboard/Comments";
+import ServiceDesk from "./pages/doctorPanel/ServiceDesk";
+import Doctor from "./pages/doctorPanel/Doctor";
+import Laboratory from "./pages/laboraory/Laboratory";
+import NeedForActionL from "./pages/laboraory/NeedForActionL";
+import ProfileL from "./pages/laboraory/ProfileL";
+import ServiceDeskL from "./pages/laboraory/ServiceDeskL";
 
 export default function Router() {
   return (
@@ -28,10 +25,10 @@ export default function Router() {
           <Route index element={<Login />} />
           <Route path="retrieve-password" element={<RetrievePassword />} />
         </Route>
-        <Route element={<Account />}>
-          <Route path="/account/profile" element={<ProfileDr />} />
-          <Route path="/account/need-for-action" element={<NeedForActionDr />}/>
-          <Route path="/account/service-desk" element={<Doctor />} />
+        <Route element={<Doctor />}>
+          <Route path="/doctor/profile" element={<ProfileDr />} />
+          <Route path="/doctor/need-for-action" element={<NeedForActionDr />}/>
+          <Route path="/doctor/service-desk" element={<ServiceDesk />} />
         </Route>
         <Route element={<Dashboard />}>
           <Route path="/dashboard/need-for-action" element={<NeedForAction />}/>
@@ -41,13 +38,11 @@ export default function Router() {
         <Route path="/test-request" element={<TestRequest />} />
         <Route path="/medicine" element={<Medicine />} />
         <Route path="/teriage" element={<Teriage />} />
-        <Route path="/account/need-for-action/in-person-consultation" element={<InPersonConsultation/>}/>
-        <Route path="/account/need-for-action/in-person-consultation/in-person-request" element={<InPersonRequest/>}/>
-        <Route path="/account/need-for-action/emergency-call" element={<EmergencyCall/>}/>
-        <Route path="/account/need-for-action/record-test-request" element={<RecordTestRequest/>}/>
-        <Route path="/account/need-for-action/record-medicine-request" element={<RecordMedicineRequest/>}/>
-        <Route path="/account/need-for-action/record-paraclinic-request" element={<RecordParaClinic/>}/>
-        <Route path="/account/need-for-action/text-consultation" element={<TextConsultation/>}/>
+        <Route element={<Laboratory/>}>
+          <Route path="/laboratory/need-for-action" element={<NeedForActionL/>}/>
+          <Route path="/laboratory/profile" element={<ProfileL/>}/>
+          <Route path="/laboratory/service-desk" element={<ServiceDeskL/>}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
