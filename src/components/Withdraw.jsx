@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./generalComponent/Button";
 import InputWithShiftLabel from "./generalComponent/InputWithShiftLabel";
-import TransactionItem from "./TransActionItem";
+import TransactionItem from "./TransactionItem";
 import RecordRequestWithdraw from "./generalComponent/RecordRequestWithdraw";
 import ModalWithdraw from "./ModalWithdraw";
 

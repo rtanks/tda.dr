@@ -1,6 +1,6 @@
 import Button from "./generalComponent/Button";
 import InputWithShiftLabel from "./generalComponent/InputWithShiftLabel";
-import TransactionItem from "./TransActionItem";
+import TransactionItem from "./TransactionItem";
 
 export default function Deposit() {
     const transactions = [
