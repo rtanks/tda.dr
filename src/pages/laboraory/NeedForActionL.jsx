@@ -20,7 +20,7 @@ export default function NeedForActionL() {
     }
   }
   return (
-    <div className="w-full h-max flex flex-col mt-5 gap-5 vazir-medium bg-transparent">
+    <div className="w-[90%] mx-auto md:w-full h-max flex flex-col mt-5 gap-5 vazir-medium bg-transparent">
       {
         select.selected ? (
           showTargetPage(select.status)
