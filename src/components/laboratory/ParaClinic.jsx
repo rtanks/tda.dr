@@ -10,8 +10,8 @@ export default function ParaClinic({goBack}) {
         console.log(price)
     }
     return (
-        <div className="w-full h-full bg-white absolute left-0 top-0 vazir-medium flex justify-center">
-            <div className="w-[402px]">
+         <div className="w-full h-full bg-white vazir-medium fixed left-0 top-0 z-50 overflow-y-scroll">
+            <div className="w-[402px] mx-auto h-max">
                 <TestHeader title={"ثبت پاراکلینیک"} onClick={() => goBack("", false)}/>
                 <div className="w-[90%] mx-auto flex flex-col gap-2 pb-2">
                     <PatientInfo name={"اشکان حسنوندی"} phoneNumber={"09216919291"} time={"14:45"} date={"1404/12/01"} nationalCode={"4060405531"} insurance={"آزاد"}/>

@@ -1,11 +1,9 @@
 import classNames from "classnames";
 import { FiHome, FiUser } from "react-icons/fi";
 import { LuClipboard } from "react-icons/lu";
-import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-export default function MainMenuResponse() { 
-    const status = useSelector(state => state.statusMenu.laboratory.status);
+export default function MainMenuResponse() {
     const activeClass = (activeStatus) => {
         return classNames({
             "flex flex-col items-center vazir-medium text-center text-[14px] justify-center gap-2": true,
@@ -14,16 +12,16 @@ export default function MainMenuResponse() {
         })
     }
     return (
-        <div className={`fixed mx-auto bottom-0 left-0 right-0 ${status ? "hidden" : "flex"} md:hidden items-center text-[14px] justify-between px-6 bg-white border border-top border-gray-300 w-[402px] h-16 z-20`}>
-            <NavLink to={"laboratory/service-desk"} className={({isActive}) => activeClass(isActive)}>
+        <div className={`fixed mx-auto bottom-0 left-0 right-0 flex md:hidden items-center text-[14px] justify-between px-6 bg-white border border-top border-gray-300 w-[402px] h-16 z-20`}>
+            <NavLink to={"/paraclinic/service-desk"} className={({isActive}) => activeClass(isActive)}>
                 <FiHome size={22} />
                 <div>میز خدمت</div>
             </NavLink>
-            <NavLink to={"/laboratory/need-for-action"} className={({isActive}) => activeClass(isActive)}>
+            <NavLink to={"/paraclinic/need-for-action"} className={({isActive}) => activeClass(isActive)}>
                 <LuClipboard size={22} />
                 <div>نیاز به اقدام</div>
             </NavLink>
-            <NavLink to={"/laboratory/profile"} className={({isActive}) => activeClass(isActive)}>
+            <NavLink to={"/paraclinic/profile"} className={({isActive}) => activeClass(isActive)}>
                <FiUser size={22} />
                 <div>پروفایل کاربری</div>
             </NavLink>

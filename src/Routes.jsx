@@ -12,6 +12,11 @@ import Laboratory from "./pages/laboraory/Laboratory";
 import NeedForActionL from "./pages/laboraory/NeedForActionL";
 import ProfileL from "./pages/laboraory/ProfileL";
 import ServiceDeskL from "./pages/laboraory/ServiceDeskL";
+import ParaClinicMain from "./pages/paraClinic/ParaClinicMain";
+import NeedForActionP from "./pages/paraClinic/NeedForActionP";
+import ProfileP from "./pages/paraClinic/ProfileP";
+import ServiceDeskP from "./pages/paraClinic/ServiceDeskP";
+import RecordDoctor from "./pages/dashboard/RecordDoctor";
 
 export default function Router() {
   return (
@@ -29,14 +34,18 @@ export default function Router() {
         <Route element={<Dashboard />}>
           <Route path="/dashboard/need-for-action" element={<NeedForAction />}/>
           <Route path="/dashboard/comments" element={<Comments/>}/>
+          <Route path="/dashboard/record-doctor" element={<RecordDoctor/>}/>
         </Route>
         <Route element={<Laboratory/>}>
           <Route path="/laboratory/need-for-action" element={<NeedForActionL/>}/>
           <Route path="/laboratory/profile" element={<ProfileL/>}/>
           <Route path="/laboratory/service-desk" element={<ServiceDeskL/>}/>
         </Route>
-        
-
+        <Route element={<ParaClinicMain/>}>
+            <Route path="/paraclinic/need-for-action" element={<NeedForActionP/>}/>
+            <Route path="/paraclinic/profile" element={<ProfileP/>}/>
+            <Route path="/paraclinic/service-desk" element={<ServiceDeskP/>}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

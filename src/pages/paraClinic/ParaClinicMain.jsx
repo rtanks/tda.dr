@@ -1,10 +1,9 @@
 import { Outlet } from "react-router-dom";
-import MainMenu from "../../components/laboratory/MainMenu";
-import Navbar from "../../components/laboratory/Navbar";
-import MainMenuResponse from "../../components/laboratory/MainMenuResponse";
+import MainMenu from "../../components/paraClinicMani/MainMenu";
+import Navbar from "../../components/paraClinicMani/Navbar";
+import MainMenuResponse from "../../components/paraClinicMani/MainMenuResponse";
 
-export default function Laboratory() {
-  
+export default function ParaClinicMain() {
   return (
     <div className="w-[402px] md:w-full h-max md:h-screen md:absolute md:left-0 md:top-0 flex flex-row bg-white md:bg-[#fafafa]">
       <MainMenu/>

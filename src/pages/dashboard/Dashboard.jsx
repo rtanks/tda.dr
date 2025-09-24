@@ -12,7 +12,7 @@ export default function Dashboard() {
     setToggle((prev) => !prev);
   };
   return (
-    <div className="w-full h-max md:h-screen absolute left-0 top-0 flex flex-row bg-white md:bg-[#fafafa]">
+    <div className="w-[402px] md:w-full h-max md:h-screen md:absolute md:left-0 md:top-0 flex flex-row bg-white md:bg-[#fafafa]">
       <MainMenu toggle={toggle} changeToggleStatus={changeToggleStatus} />
       <div className="w-full md:w-[82.8%] h-full">
         <Navbar />

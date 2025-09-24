@@ -39,7 +39,7 @@ export default function ActionItem({status, name, number, time, date, nationalCo
                     </div>
                 </div>
                 <div className={`w-[60%] text-[14px] flex flex-row items-center md:pb-0 gap-1 text-[#676767] ${style}`}>
-                    <div className="w-[78%] bg-[#efefef] h-10 py-2.5 px-3 rounded-[10px]">cbc - bun - cr - na - k</div>
+                    <div className="w-[78%] bg-[#efefef] h-10 py-2.5 px-3 rounded-[10px]">گرافی دست راست - ام آر آی تراسیک - سونو گرافی شکم و لگن</div>
                     <button type="button" onClick={() => getSelectedElem(status,true)} disabled={status == "پرداخت شده"} className={`w-[157px] ${statusClass} h-10 py-2.5 text-center rounded-[10px]`}>وضعیت : {status}</button>
                 </div>
                 <div className="w-[10%] flex flex-row gap-2 text-[14px] text-[#676767]">

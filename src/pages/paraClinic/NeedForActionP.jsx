@@ -1,22 +1,23 @@
-import ActionItem from "../../components/laboratory/ActionItem";
+import ActionItem from "../../components/paraClinicMani/ActionItem";
 import { useState } from "react";
-import ParaClinic from "../../components/laboratory/ParaClinic";
-import Test from "../../components/laboratory/Test";
+import ParaClinic from "../../components/paraClinicMani/ParaClinic";
 import { PiWatchLight,PiPlus } from "react-icons/pi";
 import SearchBoxWithoutMenu from "../../components/generalComponent/SearchBoxWithoutmenu";
+import CreateDocument from "../../components/paraClinicMani/CreateDocument";
 
-export default function NeedForActionL() {
+export default function NeedForActionP() {
   const [select , setSelect] = useState({
     status: "",
     selected: false
   })
+
   const getSelectedElem = (status, selected) => {
     setSelect({status: status, selected: selected});
   }
   const showTargetPage = (status) => {
     switch(status){
-        case "سند ایجاد نشده": return <ParaClinic goBack={getSelectedElem} />
-        case "پرداخت نشده": return <Test goBack={getSelectedElem}/>
+        case "سند ایجاد نشده": return <CreateDocument goBack={getSelectedElem} />
+        case "پرداخت نشده": return <ParaClinic goBack={getSelectedElem}/>
     }
   }
   return (
@@ -34,26 +35,6 @@ export default function NeedForActionL() {
                 <PiWatchLight size={24} className="text-[#909090]"/>
             </div>
             <div className="w-full h-max flex flex-col gap-2">
-              <ActionItem status={"سند ایجاد نشده"}
-                name={"اشکان حسنوندی"}
-                number={"325475"}
-                time={"14:45"}
-                date={"1404/12/01"}
-                nationalCode={"4060405531"}
-                insurance={"آزاد"}
-                getSelectedElem={getSelectedElem}
-                style={"border-b md:border-0 border-b-[#e0e0e0]"}
-              />
-              <ActionItem status={"پرداخت نشده"}
-                name={"اشکان حسنوندی"}
-                number={"6251478"}
-                time={"14:45"}
-                date={"1404/12/01"}
-                nationalCode={"4060405531"}
-                insurance={"آزاد"}
-                getSelectedElem={getSelectedElem}
-                style={"border-b md:border-0 border-b-[#e0e0e0]"}
-              />
               <ActionItem status={"پرداخت شده"}
                 name={"اشکان حسنوندی"}
                 number={"6255412"}
