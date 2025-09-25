@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Role from "./Role";
 
-export default function UserRole() {
-    const roles = ["پزشک","پرستار","آزمایشگاه","تصویر برداری","پیک"];
+export default function UserRole({roles}) {
     const [roleSelected, setRoleSelected] = useState("");
 
     const getRoleSelected = (role) => {

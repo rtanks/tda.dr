@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-export default function SearchBoxWithBtn({children, onClick1, onClick2}) {
+export default function SearchBoxWithMenu({children, onClick}) {
     const [len, setLen] = useState(0);
-    const {menu, icon} = children;
     return (
-        <div className="w-full md:w-[30%] flex gap-2 md:gap-4">
-            <div onClick={onClick1} className="h-13 bg-gray-200 w-13 rounded-xl flex items-center justify-center text-[#676767] md:hidden">
-                {menu}
+        <div className="w-full md:w-[30%] hidden md:flex gap-2 md:gap-4">
+            <div onClick={onClick} className="h-13 bg-gray-200 w-13 rounded-xl flex items-center justify-center text-[#676767] md:hidden">
+                {children}
             </div>
             <div className="relative w-[85%] h-13">
                 <input
@@ -20,9 +19,6 @@ export default function SearchBoxWithBtn({children, onClick1, onClick2}) {
                     </span>
                 )}
             </div>
-            <button type="button" onClick={onClick2} className="h-13 bg-gray-200 w-13 text-[#676767] rounded-xl flex items-center justify-center">
-                {icon}
-            </button>
         </div>
     )
 }

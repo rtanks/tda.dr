@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 export default function SearchBoxWithoutMenu({children}) {
     const [len, setLen] = useState(0);
-    const {menu, icon} = children;
     return (
         <div className="w-full md:w-[30%] hidden md:flex gap-2 md:gap-4">
             <div className="relative w-[85%] h-13">

@@ -3,7 +3,8 @@ import classNames from "classnames"
 import { HiOutlineCurrencyDollar, HiOutlinePencilSquare } from "react-icons/hi2";
 import { IoEyeOutline, IoRocketOutline } from "react-icons/io5";
 import { LiaAngleRightSolid } from "react-icons/lia";
-import { BiComment } from "react-icons/bi";
+import { BiComment, BiMoneyWithdraw } from "react-icons/bi";
+import { GoHistory } from "react-icons/go";
 
 export default function MainMenu({toggle, changeToggleStatus}) {
     
@@ -46,6 +47,14 @@ export default function MainMenu({toggle, changeToggleStatus}) {
                 <NavLink to={"/dashboard/comments"} className={({isActive}) => activeItem(isActive)}>
                     <BiComment size={24} className={iconClassName}/>
                     <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>نظر کاربران</span>
+                </NavLink>
+                <NavLink to={"/dashboard/request-withdraw"} className={({isActive}) => activeItem(isActive)}>
+                    <BiMoneyWithdraw size={24} className={iconClassName}/>
+                    <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>درخواست برداشت</span>
+                </NavLink>
+                <NavLink to={"/dashboard/financial-history"} className={({isActive}) => activeItem(isActive)}>
+                    <GoHistory size={24} className={iconClassName}/>
+                    <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>سابقه مالی</span>
                 </NavLink>
         </div>
     )

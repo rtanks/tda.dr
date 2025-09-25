@@ -11,7 +11,7 @@ export default function Login() {
   const { disabledChecker, checkNationalCode, checkEmptyPassword } =
     useSpecialLoginServices();
   const navigate = useNavigate();
-
+  const roles = ["پزشک","پرستار","آزمایشگاه","تصویر برداری","پیک"];
   const disabledClass = classNames({
     "bg-[#006ECF] text-white": disabledChecker(),
     "bg-gray-200 text-gray-500": !disabledChecker(),
@@ -23,7 +23,7 @@ export default function Login() {
       <div className="w-full mt-12 vazir-medium text-right font-semibold text-lg text-[16px]">
         ورود کاربر خاص (-:
       </div>
-      <UserRole />
+      <UserRole roles={roles}/>
       <form className="w-full h-max">
         <Input
           type={"text"}

@@ -6,6 +6,10 @@ export const transformFormatWithSpread = (value) => {
     const transformed = new Intl.NumberFormat("fa-IR").format(value)
     return transformed;
 }
+export const transformFormatWithSpreadEn = (value) => {
+    const transformed = new Intl.NumberFormat("en-US").format(value)
+    return transformed;
+}
 
 function persianToEnglishDigits(str) {
   if (typeof str !== "string") return str;
