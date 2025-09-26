@@ -6,6 +6,7 @@ export default function DrItemManagement({status, pay, title, text, children, on
     const [statusItem, setStatusItem] = useState(status);
     const changeStatusItem = () => {
         setStatusItem(prev => !prev)
+        onClick();
     }
     const showStatus = classNames({
             "text-[#00C313] bg-[#CDF2D3]": statusItem,

@@ -19,6 +19,8 @@ import ServiceDeskP from "./pages/paraClinic/ServiceDeskP";
 import RecordDoctor from "./pages/dashboard/RecordDoctor";
 import RequestWithdraw from "./pages/dashboard/RequestWithdraw";
 import FinancialHistory from "./pages/dashboard/FinancialHistory";
+import RecordDoctorL from "./pages/laboraory/RecordDoctorL";
+import RecordDoctorP from "./pages/paraClinic/RecordDoctorP";
 
 export default function Router() {
   return (
@@ -44,11 +46,13 @@ export default function Router() {
           <Route path="/laboratory/need-for-action" element={<NeedForActionL/>}/>
           <Route path="/laboratory/profile" element={<ProfileL/>}/>
           <Route path="/laboratory/service-desk" element={<ServiceDeskL/>}/>
+          <Route path="/laboratory/record-doctor" element={<RecordDoctorL/>}/>
         </Route>
         <Route element={<ParaClinicMain/>}>
             <Route path="/paraclinic/need-for-action" element={<NeedForActionP/>}/>
             <Route path="/paraclinic/profile" element={<ProfileP/>}/>
             <Route path="/paraclinic/service-desk" element={<ServiceDeskP/>}/>
+            <Route path="/paraclinic/record-doctor" element={<RecordDoctorP/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

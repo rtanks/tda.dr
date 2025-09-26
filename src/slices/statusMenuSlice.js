@@ -8,7 +8,7 @@ export const statusMenuSlice = createSlice({
     reducers: {
         changeToggleMenuStatus: (state) => {
             state.toggle = !state.toggle
-        } 
+        },
     }
 })
 

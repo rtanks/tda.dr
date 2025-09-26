@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom"
 import classNames from "classnames"
 import { LuClipboard } from "react-icons/lu";
 import { FiHome, FiUser } from "react-icons/fi";
+import { HiOutlinePencilSquare } from "react-icons/hi2";
 
 export default function MainMenu() {
     
@@ -27,6 +28,10 @@ export default function MainMenu() {
             <NavLink to={"/laboratory/profile"} className={({isActive}) => activeItem(isActive)}>
                 <FiUser size={24} className="text-[#b5b5b5]"/>
                 <span className={`text-[14px] text-[#676767]`}>پروفایل</span>
+            </NavLink>
+            <NavLink to={"/laboratory/record-doctor"} className={({isActive}) => activeItem(isActive)}>
+                <HiOutlinePencilSquare size={24} className="text-[#b5b5b5]"/>
+                <span className={`text-[14px] text-[#676767]`}>ثبت پزشک</span>
             </NavLink>
         </div>
     )
