@@ -19,21 +19,28 @@ export default function RequestWithdraw() {
     
     return (
       <>
-      <SearchBoxWithBtn onClick1={() => changeToggleStatus()} onClick2={() => getItemSelected("hi")}>
-        {{
-          menu: <CgMenuRight size={24}/>,
-          icon: <PiPlus size={24} />,
-        }}
-      </SearchBoxWithBtn>
-        <div className="w-full h-max flex flex-col mt-5 gap-5 bg-transparent">
-          <div className="w-full h-max flex flex-col gap-4">
-            <RequestWithdrawItem name={"اشکان حسنوندی"} expertise={"متخصص جراحی عمومی"} nationalCode={"4060405531"} 
-            province={"لرستان"} city={"خرم آباد"} price={"458000"} time={"14:45"} date={"1404/12/01"}/>
-            <RequestWithdrawItem name={"اشکان حسنوندی"} expertise={"متخصص جراحی عمومی"} nationalCode={"4060405531"} 
-            province={"لرستان"} city={"خرم آباد"} price={"458000"} time={"14:45"} date={"1404/12/01"}/>
-          </div>
-        </div>
-        {(itemSelected != null) && <CreateWithdraw goBack={getItemSelected}/>}
+        {
+          itemSelected == null ? (
+            <>
+              <SearchBoxWithBtn onClick1={() => changeToggleStatus()} onClick2={() => getItemSelected("hi")}>
+                {{
+                  menu: <CgMenuRight size={24}/>,
+                  icon: <PiPlus size={24} />,
+                }}
+              </SearchBoxWithBtn>
+              <div className="w-full h-max flex flex-col mt-5 gap-5 bg-transparent">
+                <div className="w-full h-max flex flex-col gap-4">
+                  <RequestWithdrawItem name={"اشکان حسنوندی"} expertise={"متخصص جراحی عمومی"} nationalCode={"4060405531"} 
+                  province={"لرستان"} city={"خرم آباد"} price={"458000"} time={"14:45"} date={"1404/12/01"}/>
+                  <RequestWithdrawItem name={"اشکان حسنوندی"} expertise={"متخصص جراحی عمومی"} nationalCode={"4060405531"} 
+                  province={"لرستان"} city={"خرم آباد"} price={"458000"} time={"14:45"} date={"1404/12/01"}/>
+                </div>
+              </div>
+            </>
+          ) : (
+            <CreateWithdraw goBack={getItemSelected}/>
+          )
+        }
       </>
     );
 }

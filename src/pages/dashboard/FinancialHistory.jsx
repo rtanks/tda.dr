@@ -19,15 +19,22 @@ export default function FinancialHistory() {
     }
     return (
         <>
-            <SearchBoxWithMenu onClick={() => changeToggleStatus()}>
-              {<CgMenuRight size={24}/>}
-            </SearchBoxWithMenu>
-            <UserRole roles={roles}/>
-            <div className="w-full h-max flex flex-col gap-5">
-              <FinancialHistoryItem name={"اشکان حسنوندی"} expertise={"متخصص جراحی عمومی"} nationalCode={"4060405531"} 
-                province={"لرستان"} city={"خرم آباد"} shaba={"57856782854567874374867388"} number={12} onClick={() => getItemSelected("hi")}/>
-            </div>
-            {(itemSelected != null) && <FinancialHistoryDrawer onClick={() => getItemSelected(null)}/>}
+            {
+              itemSelected == null ? (
+                  <>
+                    <SearchBoxWithMenu onClick={() => changeToggleStatus()}>
+                      {<CgMenuRight size={24}/>}
+                    </SearchBoxWithMenu>
+                    <UserRole roles={roles}/>
+                    <div className="w-full h-max flex flex-col gap-5">
+                      <FinancialHistoryItem name={"اشکان حسنوندی"} expertise={"متخصص جراحی عمومی"} nationalCode={"4060405531"} 
+                        province={"لرستان"} city={"خرم آباد"} shaba={"57856782854567874374867388"} number={12} onClick={() => getItemSelected("hi")}/>
+                    </div>
+                  </>   
+              ) : (
+                <FinancialHistoryDrawer onClick={() => getItemSelected(null)}/>
+              )
+            }
         </>
     )
 }
