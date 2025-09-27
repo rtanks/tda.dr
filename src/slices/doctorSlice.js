@@ -19,15 +19,23 @@ export const doctorSlice = createSlice({
         addInPersonTimeConsulting: (state, action) => {
             if(isEmptyArray(state.consulting.inPerson.times.date)) {
                 state.consulting.inPerson.times.date.push(action.payload.date)
+            } 
+            if(action.payload.times == null) {
+                state.consulting.inPerson.times.date.push(action.payload.date)
+            } 
+            if(action.payload.date == null) {
                 state.consulting.inPerson.times.timeConsulting.push(action.payload.times)
             } 
         },
         proliferationTimeConSulting: (state, action) => {
             state.consulting.inPerson.times.date.push(action.payload.date)
+        },
+        changeStatusActive: (state) => {
+            state.consulting.inPerson.status = !state.consulting.inPerson.status
         }
     }
 })
 
-export const {addInPersonTimeConsulting, proliferationTimeConSulting} = doctorSlice.actions;
+export const {addInPersonTimeConsulting, proliferationTimeConSulting, changeStatusActive} = doctorSlice.actions;
 
 export default doctorSlice.reducer;

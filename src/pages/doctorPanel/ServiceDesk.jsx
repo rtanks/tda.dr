@@ -5,6 +5,7 @@ import DrConsultingManagement from "../../components/doctorPanel/DrConsultingMan
 import DrRecordManagement from "../../components/doctorPanel/DrRecordManagement";
 import InPersonSetting from "../../components/doctorPanel/InPersonSetting";
 import CreateTurnTime from "../../components/doctorPanel/CreateTurnTime";
+import EditInPerson from "../../components/doctorPanel/EditInPerson";
 
 export default function ServiceDesk() {
   const [active, setActive] = useState({ record: false, consulting: true });
@@ -21,8 +22,9 @@ export default function ServiceDesk() {
 
   const showComponent = () => {
     switch(itemSelected) {
-      case "inPersonTurn": return <InPersonSetting goBack={() => getItemSelected(null)} onClick={() => getItemSelected("create")}/>
-      case "create": return <CreateTurnTime goBack={() => getItemSelected(null)} onClick={() => getItemSelected("inPersonTurn")}/>
+      case "inPersonTurn": return <InPersonSetting goBack={() => getItemSelected(null)} onClick={() => getItemSelected("create")} onClick2={() => getItemSelected("edit")}/>
+      case "create": return <CreateTurnTime goBack={() => getItemSelected("null")} onClick={() => getItemSelected("inPersonTurn")}/>
+      case "edit": return <EditInPerson goBack={() => getItemSelected("inPersonTurn")}/>
     }
   }
   return (
