@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import {toJalaali} from "jalaali-js"
 
 export let first = {};
+export const months = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
 export default function useCalender() {
     const daysOfWeek = ["یکشنبه","دوشنبه","سه شنبه","چهارشنبه","پنجشنبه", "جمعه", "شنبه"]
     const [firstDate, setFirstDate] = useState({}); 
-
     useEffect(() => {
         const dateNow = new Date();
         const newDate = toJalaali(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate());

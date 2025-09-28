@@ -32,10 +32,13 @@ export const doctorSlice = createSlice({
         },
         changeStatusActive: (state) => {
             state.consulting.inPerson.status = !state.consulting.inPerson.status
+        }, 
+        editInPersonTimesConsulting: (state, action) => {
+            state.consulting.inPerson.times.timeConsulting = action.payload.times;
         }
     }
 })
 
-export const {addInPersonTimeConsulting, proliferationTimeConSulting, changeStatusActive} = doctorSlice.actions;
+export const {addInPersonTimeConsulting, proliferationTimeConSulting, changeStatusActive, editInPersonTimesConsulting} = doctorSlice.actions;
 
 export default doctorSlice.reducer;

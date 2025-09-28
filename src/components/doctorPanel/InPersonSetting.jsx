@@ -12,7 +12,7 @@ import classNames from "classnames";
 import AddTime from "./AddTime";
 
 
-export default function InPersonSetting ({goBack,onClick, onClick2}) {
+export default function InPersonSetting ({goBack,onClick, onClick2, onClick3}) {
     const turnTime = useSelector(state => state.doctor.consulting.inPerson);
     const {getDates} = useCalender();
     const dispatch =  useDispatch();
@@ -31,7 +31,7 @@ export default function InPersonSetting ({goBack,onClick, onClick2}) {
         )
     }
     const getDateSelected = () => {
-        if(setDateSelected == null) {
+        if(dateSelected == null) {
             console.log("hi")
             dispatch(addInPersonTimeConsulting({date: first, times: null}));
             dispatch(changeStatusActive());
@@ -94,7 +94,7 @@ export default function InPersonSetting ({goBack,onClick, onClick2}) {
                             </div>
                             <div className="w-[402px] mx-auto justify-center fixed bottom-0 left-0 right-0 border-t border-t-[#eee] flex flex-row gap-2 py-3 bg-white">
                                 <button onClick={onClick2} type="button" className="w-[178px] h-12 flex text-[15px] items-center justify-center rounded-[10px] text-[#676767] bg-[#e9e9e9]">ویرایش امروز</button>
-                                <button type="button" className="w-[178px] h-12 flex text-[15px] items-center justify-center rounded-[10px] text-[#676767] bg-[#e9e9e9]">ایجاد روتین مشاوره</button>
+                                <button onClick={onClick3} type="button" className="w-[178px] h-12 flex text-[15px] items-center justify-center rounded-[10px] text-[#676767] bg-[#e9e9e9]">ایجاد روتین مشاوره</button>
                             </div>
                         </>
                     )

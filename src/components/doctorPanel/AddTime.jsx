@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
 export default function AddTime({title, times, goTo}) {
-    const navigate = useNavigate();
     
     return (
         <div className="w-full h-max text-[14px] vazir-medium text-[#676767] flex flex-col gap-5 py-4 bg-white">
