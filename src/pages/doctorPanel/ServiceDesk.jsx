@@ -24,7 +24,7 @@ export default function ServiceDesk() {
     switch(itemSelected) {
       case "inPersonTurn": return <InPersonSetting goBack={() => getItemSelected(null)} onClick={() => getItemSelected("create")} onClick2={() => getItemSelected("edit")} onClick3={() => getItemSelected("create")}/>
       case "create": return <CreateTurnTime goBack={() => getItemSelected("null")} onClick={() => getItemSelected("inPersonTurn")}/>
-      case "edit": return <EditInPerson goBack={() => getItemSelected("inPersonTurn")} onClick={() => getItemSelected("inPersonTurn")}/>
+      case "edit": return <EditInPerson goBack={() => getItemSelected("")} onClick={() => getItemSelected("inPersonTurn")}/>
     }
   }
   return (

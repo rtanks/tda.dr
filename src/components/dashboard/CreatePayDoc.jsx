@@ -2,7 +2,7 @@ import { useState } from "react";
 import TestHeader from "../generalComponent/HeaderTest";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
-export default function CreatePayDoc({goBack}) {
+export default function CreatePayDoc({onClick}) {
     const [price, setPrice] = useState("");
     const onChange = (e) => {
         setPrice(e.target.value);
@@ -11,7 +11,7 @@ export default function CreatePayDoc({goBack}) {
     return (
          <div className="w-full h-full bg-white vazir-medium fixed left-0 top-0 z-50 overflow-y-scroll">
             <div className="w-[402px] mx-auto h-max">
-                <TestHeader title={"ایجاد پرداخت"} onClick={goBack}/>
+                <TestHeader title={"ایجاد پرداخت"} onClick={onClick}/>
                 <div className="w-[90%] mx-auto flex flex-col gap-2 pb-2">
                     <div className="w-full text-[14px] text-[#676767] mb-4">
                         <p>
