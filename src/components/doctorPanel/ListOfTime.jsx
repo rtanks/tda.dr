@@ -19,32 +19,32 @@ export default function ListOfTime({timeConSulting, timeRest}) {
         // }
         ];
         // because in minute
-        const tc = timeConSulting >= 60 ? {hour: timeConSulting / 60, minute: timeConSulting % 60} : {hour: 0, minute: timeConSulting};
-        const tr = timeRest >= 60 ? {hour: timeRest / 60, minute: timeRest % 60} : {hour: 0, minute: timeRest};
+        const tc = timeConSulting >= 60 ? {hour: Math.floor(timeConSulting / 60), minute: timeConSulting % 60} : {hour: 0, minute: timeConSulting};
+        const tr = timeRest >= 60 ? {hour: Math.floor(timeRest / 60), minute: timeRest % 60} : {hour: 0, minute: timeRest};
         let h = 9;
         let min = 0;
         console.log(tc);
         console.log(tr)
         while(h <= 20) {
-            if(timeTurn.length == 0) {
+            if(timeTurn.length == 0) { 
                 timeTurn.push({
                     start: {hour: h, minute: min},
-                    end: {hour: tc.hour + h + Math.floor((min + tc.minute)/ 60), minute: (min + tc.minute) % 60}
+                    end: {hour: tc.hour + h + Math.floor(min + tc.minute / 60), minute: (min + tc.minute) % 60}
                 })
                 h = h + tc.hour + tr.hour;
                 min = min + tc.minute + tr.minute
-                if(min > 60) {
+                if(min >= 60) {
                      h = h + Math.floor(min / 60)
                      min = min % 60
                  }   
-            } else {
+            } else { 
                 timeTurn.push({
                     start: {hour: h, minute: min},
-                    end: {hour: tc.hour + h + Math.floor((min + tc.minute)/ 60), minute: (min + tc.minute) % 60}
+                    end: {hour: tc.hour + h + Math.floor(min + tc.minute / 60), minute: (min + tc.minute) % 60}
                 })
                 h = h + tc.hour + tr.hour;
                 min = min + tc.minute + tr.minute
-                if(min > 60) {
+                if(min >= 60) {
                      h = h + Math.floor(min / 60)
                      min = min % 60
                  }

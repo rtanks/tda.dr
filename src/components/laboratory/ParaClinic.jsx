@@ -21,7 +21,7 @@ export default function ParaClinic({goBack}) {
                 </div>
                 <div className="w-full border-t-[6px] border-t-[#f5f5f5] px-5 pt-2">
                     <span>ایجاد سند پرداخت</span>
-                    <div className="w-full h-[53px] texxt-16px flex flex-row items-center gap-2 px-4 border border-[#909090] rounded-[15px] mt-3">
+                    <div className="w-full h-[53px] text-[16px] flex flex-row items-center gap-2 px-4 border border-[#909090] rounded-[15px] mt-3">
                         <input onChange={(e) => onChange(e)} type="text" value={price} placeholder="ورود مبلغ" className="text-[#676767] placeholder:text-[#909090] border-0 outline-0 w-[90%]"/>
                         <span className="text-[#909090]">تومان</span>
                         <button type="button" onClick={() => setPrice("")}>

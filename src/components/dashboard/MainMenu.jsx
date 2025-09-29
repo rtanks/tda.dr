@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import classNames from "classnames"
 import { HiOutlineCurrencyDollar, HiOutlinePencilSquare } from "react-icons/hi2";
 import { IoEyeOutline, IoRocketOutline } from "react-icons/io5";
-import { LiaAngleRightSolid } from "react-icons/lia";
+import { LiaAngleRightSolid, LiaUserInjuredSolid } from "react-icons/lia";
 import { BiComment, BiMoneyWithdraw } from "react-icons/bi";
 import { GoHistory } from "react-icons/go";
 
@@ -47,6 +47,10 @@ export default function MainMenu({toggle, changeToggleStatus}) {
                 <NavLink to={"/dashboard/comments"} className={({isActive}) => activeItem(isActive)}>
                     <BiComment size={24} className={iconClassName}/>
                     <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>نظر کاربران</span>
+                </NavLink>
+                <NavLink to={"/dashboard/patient"} className={({isActive}) => activeItem(isActive)}>
+                    <LiaUserInjuredSolid size={24} className={iconClassName}/>
+                    <span className={`text-[14px] text-[#676767] ${toggle? "md:hidden" : "block"}`}>بیمار</span>
                 </NavLink>
                 <NavLink to={"/dashboard/request-withdraw"} className={({isActive}) => activeItem(isActive)}>
                     <BiMoneyWithdraw size={24} className={iconClassName}/>

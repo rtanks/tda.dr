@@ -21,6 +21,7 @@ import RequestWithdraw from "./pages/dashboard/RequestWithdraw";
 import FinancialHistory from "./pages/dashboard/FinancialHistory";
 import RecordDoctorL from "./pages/laboraory/RecordDoctorL";
 import RecordDoctorP from "./pages/paraClinic/RecordDoctorP";
+import Patient from "./pages/dashboard/Patient";
 
 export default function Router() {
   return (
@@ -41,6 +42,7 @@ export default function Router() {
           <Route path="/dashboard/record-doctor" element={<RecordDoctor/>}/>
           <Route path="/dashboard/request-withdraw" element={<RequestWithdraw/>}/>
           <Route path="/dashboard/financial-history" element={<FinancialHistory/>}/>
+          <Route path="/dashboard/patient" element={<Patient/>}/>
         </Route>
         <Route element={<Laboratory/>}>
           <Route path="/laboratory/need-for-action" element={<NeedForActionL/>}/>
