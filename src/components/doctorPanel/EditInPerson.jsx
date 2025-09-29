@@ -26,7 +26,7 @@ export default function EditInPerson({goBack, onClick}) {
     return (
         <div className="w-full h-full bg-white vazir-medium fixed left-0 top-0 z-50 overflow-y-scroll">
             <div className="w-[402px] h-[89%] mx-auto">
-                <TestHeader title={`ویرایش ${dateSelected[0].weekDay} ${transformFormat(dateSelected[0].day)} ${months[dateSelected[0].month - 1]} ${transformFormat(dateSelected[0].year)}`} onClick={() => goBack()}/>
+                <TestHeader title={`ویرایش ${dateSelected[0].weekDay} ${transformFormat(dateSelected[0].day)} ${months[dateSelected[0].month - 1]} ${transformFormat(dateSelected[0].year)}`} onClick={goBack}/>
                 <div className="w-full h-max flex flex-col gap-5">
                     <p className="text-[14px] text-[#676767] p-5">ویرایش ها تنها بر روی تاریخ انتخابی اعمال میگردد . 
                         در صورت نیاز به ایجاد روتین مشاوره در ایام هفته
