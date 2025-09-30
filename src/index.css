@@ -16,7 +16,7 @@
     font-family: IranSansBold;
 }
 #root {
-    @apply w-[402px] mx-auto;
+    @apply w-full sm:w-[402px] mx-auto;
 }
 ::-webkit-scrollbar {
     display: none;
