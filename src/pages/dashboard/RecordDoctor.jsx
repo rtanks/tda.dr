@@ -1,13 +1,13 @@
 import { useState } from "react";
 import RecordDoctorItem from "../../components/dashboard/RecordDoctorItem";
-import UserEdit from "../../components/UserEdit";
-import RecordUser from "../../components/RecordUser";
 import SettingDr from "../../components/dashboard/SettingDr";
 import SearchBoxWithBtn from "../../components/generalComponent/SearchBoxWithBtn";
 import { PiPlus } from "react-icons/pi";
 import { CgMenuRight } from "react-icons/cg";
 import { useDispatch } from "react-redux";
 import { changeToggleMenuStatus } from "../../slices/statusMenuSlice";
+import UserDoctorEdit from "../../components/dashboard/UserDoctorEdit";
+import RecordDoctorUser from "../../components/dashboard/RecordDoctorUser";
 
 export default function RecordDoctor() {
   const [itemSelected, setItemSelected] = useState(null);
@@ -20,8 +20,8 @@ export default function RecordDoctor() {
   };
   const switchItems = () => {
     switch(itemSelected) {
-      case "edit": return <UserEdit onClick={() => setItemSelected(null)}/>
-      case "record": return <RecordUser onClick={() => setItemSelected(null)}/>
+      case "edit": return <UserDoctorEdit onClick={() => setItemSelected(null)}/>
+      case "record": return <RecordDoctorUser onClick={() => setItemSelected(null)}/>
       case "setting": return <SettingDr onClick={() => setItemSelected(null)}/>
     }
   }

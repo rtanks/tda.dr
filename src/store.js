@@ -3,7 +3,8 @@ import actionReducer from "./slices/actionsSlice";
 import inPersonReducer from "./slices/inPersonSlice";
 import selectActionReducer from "./slices/selectActionSlice";
 import statusMenuReducer from "./slices/statusMenuSlice";
-import doctorReducer from "./slices/doctorSlice"
+import doctorReducer from "./slices/doctorSlice";
+import loginReducer from "./slices/loginSlice";
 
 export const store = configureStore({
     reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
         inPerson: inPersonReducer,
         selectAction: selectActionReducer,
         statusMenu: statusMenuReducer,
-        doctor: doctorReducer
+        doctor: doctorReducer,
+        loginInfo: loginReducer, 
     }
 })
