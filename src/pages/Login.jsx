@@ -5,7 +5,7 @@ import SubmitButton from "../components/generalComponent/SubmitButton";
 import classNames from "classnames";
 import UserRole from "../components/UserRole";
 import { useNavigate } from "react-router-dom";
-import loginService from "../services/api/loginService";
+// import loginService from "../services/api/loginService";
 import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,7 +17,7 @@ const schema = z.object({
 })
 
 export default function Login() {
-  const {loginMutation} = loginService()
+  // const {loginMutation} = loginService()
   const navigate = useNavigate();
   
   const {register, setValue, handleSubmit, formState: {errors, isValid}} = useForm({
@@ -39,7 +39,7 @@ export default function Login() {
 
   const onSubmit = (data) => {
     console.log(data)
-    loginMutation.mutate(data)
+    navigate("/doctor/need-for-action")
   }
   return (
     <div className="w-[90%] mt-10 mx-auto flex flex-col items-center">

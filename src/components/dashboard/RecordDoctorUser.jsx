@@ -15,7 +15,7 @@ const schema = z.object({
 });
 
 export default function RecordDoctorUser({onClick}) {
-    const {recordDoctorMutation} = recordDoctorService();
+    // const {recordDoctorMutation} = recordDoctorService();
     const {register, handleSubmit, formState: {errors, isValid}} = useForm({
         resolver: zodResolver(schema),
         mode: "onChange",
@@ -31,7 +31,7 @@ export default function RecordDoctorUser({onClick}) {
       });
     const onSubmit = (data) => {
         console.log(data)
-        recordDoctorMutation.mutate(data)
+        // recordDoctorMutation.mutate(data)
     }
     return (
         <div className="w-full h-full bg-white vazir-medium fixed left-0 top-0 z-50 overflow-y-scroll">

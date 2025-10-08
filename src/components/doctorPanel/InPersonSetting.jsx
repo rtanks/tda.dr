@@ -92,7 +92,7 @@ export default function InPersonSetting ({goBack,onClick, onClick2, onClick3}) {
                                     categoryOfTimes()
                                 }
                             </div>
-                            <div className="w-[402px] mx-auto justify-center fixed bottom-0 left-0 right-0 border-t border-t-[#eee] flex flex-row gap-2 py-3 bg-white">
+                            <div className="w-full sm:w-[402px] mx-auto justify-center fixed bottom-0 left-0 right-0 border-t border-t-[#eee] flex flex-row gap-2 py-3 bg-white">
                                 <button onClick={onClick2} type="button" className="w-[178px] h-12 flex text-[15px] items-center justify-center rounded-[10px] text-[#676767] bg-[#e9e9e9]">ویرایش امروز</button>
                                 <button onClick={onClick3} type="button" className="w-[178px] h-12 flex text-[15px] items-center justify-center rounded-[10px] text-[#676767] bg-[#e9e9e9]">ایجاد روتین مشاوره</button>
                             </div>

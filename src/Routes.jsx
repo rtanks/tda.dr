@@ -8,10 +8,10 @@ import NeedForAction from "./pages/dashboard/NeedForAction";
 import Comments from "./pages/dashboard/Comments";
 import ServiceDesk from "./pages/doctorPanel/ServiceDesk";
 import Doctor from "./pages/doctorPanel/Doctor";
-import Laboratory from "./pages/laboraory/Laboratory";
-import NeedForActionL from "./pages/laboraory/NeedForActionL";
-import ProfileL from "./pages/laboraory/ProfileL";
-import ServiceDeskL from "./pages/laboraory/ServiceDeskL";
+import Laboratory from "./pages/laboratory/Laboratory";
+import NeedForActionL from "./pages/laboratory/NeedForActionL";
+import ProfileL from "./pages/laboratory/ProfileL";
+import ServiceDeskL from "./pages/laboratory/ServiceDeskL";
 import ParaClinicMain from "./pages/paraClinic/ParaClinicMain";
 import NeedForActionP from "./pages/paraClinic/NeedForActionP";
 import ProfileP from "./pages/paraClinic/ProfileP";
@@ -19,9 +19,14 @@ import ServiceDeskP from "./pages/paraClinic/ServiceDeskP";
 import RecordDoctor from "./pages/dashboard/RecordDoctor";
 import RequestWithdraw from "./pages/dashboard/RequestWithdraw";
 import FinancialHistory from "./pages/dashboard/FinancialHistory";
-import RecordDoctorL from "./pages/laboraory/RecordDoctorL";
+import RecordDoctorL from "./pages/laboratory/RecordDoctorL";
 import RecordDoctorP from "./pages/paraClinic/RecordDoctorP";
 import Patient from "./pages/dashboard/Patient";
+import Drugstore from "./pages/drugstore/Drugstore";
+import ServiceDeskD from "./pages/drugstore/ServiceDeskD";
+import NeedForActionD from "./pages/drugstore/NeedForActionD";
+import ProfileD from "./pages/drugstore/ProfileD";
+import RecordDoctorD from "./pages/drugstore/RecordDoctorD";
 
 export default function Router() {
   return (
@@ -55,6 +60,12 @@ export default function Router() {
             <Route path="/paraclinic/profile" element={<ProfileP/>}/>
             <Route path="/paraclinic/service-desk" element={<ServiceDeskP/>}/>
             <Route path="/paraclinic/record-doctor" element={<RecordDoctorP/>}/>
+        </Route>
+        <Route element={<Drugstore/>}>
+          <Route path="/drugstore/need-for-action" element={<NeedForActionD/>}/>
+          <Route path="/drugstore/profile" element={<ProfileD/>}/>
+          <Route path="/drugstore/service-desk" element={<ServiceDeskD/>}/>
+          <Route path="/drugstore/record-doctor" element={<RecordDoctorD/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

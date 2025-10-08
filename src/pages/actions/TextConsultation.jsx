@@ -49,7 +49,7 @@ export default function TextConsultation({goBack}) {
                     </div>
                 </div>
             </div> 
-            <div className="w-[402px] mx-auto fixed bottom-0 left-0 right-0 flex flex-col items-center bg-white">
+            <div className="w-full sm:w-[402px] mx-auto fixed bottom-0 left-0 right-0 flex flex-col items-center bg-white">
                 <div className="w-full h-14 flex flex-row items-center border-t border-t-[#eee] py-2.5 px-5">
                     <input onChange={(e) => getTextInput(e)} type="text" className="w-[85%] h-full border-0 outline-0 placeholder:text-[15px] placeholder:text-[#757575]" placeholder="تایپ کنید"/>
                     <button onClick={() => addToChat("user", getTime(), textType)} className="w-[15%] h-full pr-4 border-r border-r-[#e2e2e2]">

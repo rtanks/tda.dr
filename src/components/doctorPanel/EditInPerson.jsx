@@ -49,7 +49,7 @@ export default function EditInPerson({goBack, onClick}) {
                         }
                     </div>
                 </div>
-                <div className="w-[402px] mx-auto fixed bottom-0 left-0 right-0 p-5 bg-white flex flex-row gap-2 border-t border-t-[#eee]">
+                <div className="w-full sm:w-[402px] mx-auto fixed bottom-0 left-0 right-0 p-5 bg-white flex flex-row gap-2 border-t border-t-[#eee]">
                     <button type="button" className="w-[178px] h-12 flex text-[15px] items-center justify-center rounded-[10px] border bg-transparent text-[#ff0000]">لغو اقدام</button>
                     <button onClick={onClick} type="button" className="w-[178px] h-12 flex text-[15px] items-center justify-center rounded-[10px] bg-[#006ecf] text-white">ثبت اطلاعات</button>
                 </div>

@@ -37,7 +37,7 @@ export default function CreateWithdraw({goBack}) {
                     </div>
                     <input type="text" placeholder="شماره پیگیری" className="w-full h-[53px] text-[14px] text-[#676767] placeholder:text-[#909090] outline-0 border border-[#909090] rounded-[15px] px-4"/>
                 </div>
-                <div className="w-[402px] mx-auto fixed bottom-0 left-0 right-0 p-5">
+                <div className="w-full sm:w-[402px] mx-auto fixed bottom-0 left-0 right-0 p-5">
                     <div className="w-full border-t border-t-[#eee] flex flex-row gap-2 p-5">
                         <input inputMode="numeric" className="text-[#757575] text-[15px] border-0 outline-0" placeholder="میتوانید متنی وارد کنید"/>
                     </div>
