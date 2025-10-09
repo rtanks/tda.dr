@@ -34,7 +34,7 @@ export default function CreatePayDoc({onClick}) {
                     <a href="https://www.tda24.ir/ل1452" className="text-[14px] text-[#006ECF]">www.tda24.ir /ل1452</a>
                 </div>
                 
-                <div className="w-full sm:w-[402px] mx-auto fixed bottom-0 left-0 right-0 p-5 bg-white flex flex-col gap-3">
+                <div className="w-full sm:w-[402px] mx-auto fixed bottom-0 left-0 right-0 py-5 bg-white flex flex-col gap-3">
                     <div className="w-full border-t border-t-[#f5f5f5] px-5 pt-2">
                         <span className="text-[14px] text-[#676767]">ایجاد سند پرداخت</span>
                         <div className="w-full h-[53px] text-[16px] flex flex-row items-center gap-2 px-4 border border-[#909090] rounded-[15px] mt-2">
